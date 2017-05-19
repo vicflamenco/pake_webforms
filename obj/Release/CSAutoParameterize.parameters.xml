@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ApplicationServices-Web.config Connection String" description="ApplicationServices Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL5011.Smarterasp.net;Initial Catalog=DB_9B180C_cupcake;Persist Security Info=True;User ID=DB_9B180C_cupcake_admin;Password=cupcake12" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\PC01\\Documents\\Visual\ Studio\ 2012\\Projects\\pake\ -\ Gestion\\pake\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationServices']/@connectionString" />
+  </parameter>
+</parameters>

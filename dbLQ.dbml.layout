@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.375" name="dbLQ">
+  <DataContextMoniker Name="/dbLQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dd8bc2a5-a017-4c24-868d-7c36aa972c7d" absoluteBounds="0.75, 1.125, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/dbLQDataContext/base" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7163df9-46e7-444e-a5cf-c77ed272fcde" absoluteBounds="0.765, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="113a8bff-7c6b-4118-b28a-2419733dde4e" absoluteBounds="3.5, 14.5, 2, 1.5785953776041684">
+      <DataClassMoniker Name="/dbLQDataContext/voto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f547f48-12d5-4b2d-af60-dcc149359015" absoluteBounds="3.515, 14.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d0b20ad-c4e6-48a1-9d23-9b0cd65a63a9" absoluteBounds="0.75, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbLQDataContext/crema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f633765-eb79-4361-b2f5-9b084558e850" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e3304f2-f434-48c3-b39a-15a0b10cc484" absoluteBounds="3.5, 0.875, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/dbLQDataContext/diseno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c17cbaa4-19ad-4ce5-9c5e-0677af5fd03b" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6509ae4-d3dd-4b88-8ea1-df877352b210" absoluteBounds="3.5, 9.75, 2, 3.1170068359374987">
+      <DataClassMoniker Name="/dbLQDataContext/pedido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efce11d7-fd8a-4f40-8be5-9dad9cd088f3" absoluteBounds="3.515, 10.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="324a4afc-49d3-4dc3-8320-ab2a89905f03" absoluteBounds="6.25, 1, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/dbLQDataContext/pedido_detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e1be944-4914-4bf0-81f5-45de5205a9ef" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44d0236f-addf-4fa9-b319-3af068dfff7c" absoluteBounds="3.75, 3.75, 2, 1.193992513020834">
+      <DataClassMoniker Name="/dbLQDataContext/role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0dc06a32-55c3-43b5-b42f-87a68903bc65" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fea9252e-e4c1-4ba8-abad-3ba6b407c4b1" absoluteBounds="0.75, 6.5, 2, 1.5785953776041657">
+      <DataClassMoniker Name="/dbLQDataContext/topping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05d162c9-fb97-4075-84b6-4987207d04ae" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c179801-41c8-4706-94a2-be498b102832" absoluteBounds="0.75, 10.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbLQDataContext/usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91b7611a-3b55-489f-ba6c-c3a4031e9cda" absoluteBounds="0.765, 10.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.91429768880208); (3.5 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/base/base_diseno" />
+      <nodes>
+        <classShapeMoniker Id="dd8bc2a5-a017-4c24-868d-7c36aa972c7d" />
+        <classShapeMoniker Id="3e3304f2-f434-48c3-b39a-15a0b10cc484" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.4175439453125); (3.59375 : 5.4175439453125); (3.59375 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/crema/crema_diseno" />
+      <nodes>
+        <classShapeMoniker Id="4d0b20ad-c4e6-48a1-9d23-9b0cd65a63a9" />
+        <classShapeMoniker Id="3e3304f2-f434-48c3-b39a-15a0b10cc484" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.88544840494792); (6.25 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/diseno/diseno_pedido_detalle" />
+      <nodes>
+        <classShapeMoniker Id="3e3304f2-f434-48c3-b39a-15a0b10cc484" />
+        <classShapeMoniker Id="324a4afc-49d3-4dc3-8320-ab2a89905f03" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.3085034179687); (7.25 : 11.3085034179687); (7.25 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/pedido/pedido_pedido_detalle" />
+      <nodes>
+        <classShapeMoniker Id="f6509ae4-d3dd-4b88-8ea1-df877352b210" />
+        <classShapeMoniker Id="324a4afc-49d3-4dc3-8320-ab2a89905f03" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.28929768880208); (3.5624975 : 7.28929768880208); (3.5624975 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/topping/topping_diseno" />
+      <nodes>
+        <classShapeMoniker Id="fea9252e-e4c1-4ba8-abad-3ba6b407c4b1" />
+        <classShapeMoniker Id="3e3304f2-f434-48c3-b39a-15a0b10cc484" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 12.4054996744792); (1.75 : 15.2892976888021); (3.5 : 15.2892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/usuario/usuario_voto" />
+      <nodes>
+        <classShapeMoniker Id="2c179801-41c8-4706-94a2-be498b102832" />
+        <classShapeMoniker Id="113a8bff-7c6b-4118-b28a-2419733dde4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.3277498372396); (3.5 : 11.3277498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbLQDataContext/usuario/usuario_pedido" />
+      <nodes>
+        <classShapeMoniker Id="2c179801-41c8-4706-94a2-be498b102832" />
+        <classShapeMoniker Id="f6509ae4-d3dd-4b88-8ea1-df877352b210" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

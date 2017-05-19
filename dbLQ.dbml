@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cupcake" Class="dbLQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=PC01-PC\SQLEXPRESS;Initial Catalog=cupcake;Integrated Security=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ApplicationServices" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.base" Member="bases">
+    <Type Name="base">
+      <Column Name="idbase" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="base_diseno" Member="disenos" ThisKey="idbase" OtherKey="idbase" Type="diseno" />
+    </Type>
+  </Table>
+  <Table Name="dbo.voto" Member="votos">
+    <Type Name="voto">
+      <Column Name="idlike" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="positivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="iddiseno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_voto" Member="usuario" ThisKey="idusuario" OtherKey="idusuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.crema" Member="cremas">
+    <Type Name="crema">
+      <Column Name="idcrema" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="crema_diseno" Member="disenos" ThisKey="idcrema" OtherKey="idcrema" Type="diseno" />
+    </Type>
+  </Table>
+  <Table Name="dbo.diseno" Member="disenos">
+    <Type Name="diseno">
+      <Column Name="iddiseno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idtopping" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idcrema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idbase" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="idusuario" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="diseno_pedido_detalle" Member="pedido_detalles" ThisKey="iddiseno" OtherKey="iddiseno" Type="pedido_detalle" />
+      <Association Name="base_diseno" Member="base" ThisKey="idbase" OtherKey="idbase" Type="base" IsForeignKey="true" />
+      <Association Name="crema_diseno" Member="crema" ThisKey="idcrema" OtherKey="idcrema" Type="crema" IsForeignKey="true" />
+      <Association Name="topping_diseno" Member="topping" ThisKey="idtopping" OtherKey="idtopping" Type="topping" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pedido" Member="pedidos">
+    <Type Name="pedido">
+      <Column Name="idpedido" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dir_entrega" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="dir_factura" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="entregado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="anulado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cargo_extra" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="subtotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="iva" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="pedido_pedido_detalle" Member="pedido_detalles" ThisKey="idpedido" OtherKey="idpedido" Type="pedido_detalle" />
+      <Association Name="usuario_pedido" Member="usuario" ThisKey="idusuario" OtherKey="idusuario" Type="usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[pedido.detalle]" Member="pedido_detalles">
+    <Type Name="pedido_detalle">
+      <Column Name="iddetalle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iddiseno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idpedido" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="diseno_pedido_detalle" Member="diseno" ThisKey="iddiseno" OtherKey="iddiseno" Type="diseno" IsForeignKey="true" />
+      <Association Name="pedido_pedido_detalle" Member="pedido" ThisKey="idpedido" OtherKey="idpedido" Type="pedido" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roles" Member="roles">
+    <Type Name="role">
+      <Column Name="idrol" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.topping" Member="toppings">
+    <Type Name="topping">
+      <Column Name="idtopping" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="imagen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="topping_diseno" Member="disenos" ThisKey="idtopping" OtherKey="idtopping" Type="diseno" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuarios" Member="usuarios">
+    <Type Name="usuario">
+      <Column Name="idusuario" Type="System.String" DbType="NVarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="telefono" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="dui" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_voto" Member="votos" ThisKey="idusuario" OtherKey="idusuario" Type="voto" />
+      <Association Name="usuario_pedido" Member="pedidos" ThisKey="idusuario" OtherKey="idusuario" Type="pedido" />
+    </Type>
+  </Table>
+</Database>
